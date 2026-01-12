@@ -83,6 +83,12 @@ function initCharts() {
   const recEl = document.getElementById("chartRecursos");
   if (!rendEl || !recEl) return;
   const rnd = () => Math.round(60 + Math.random()*30);
+  // Gradiente para el área del gráfico de líneas
+  const ctxLine = rendEl.getContext('2d');
+  const gradient = ctxLine.createLinearGradient(0, 0, 0, rendEl.height || 200);
+  gradient.addColorStop(0, 'rgba(21,255,115,0.50)');
+  gradient.addColorStop(1, 'rgba(21,255,115,0.05)');
+
   new Chart(rendEl, {
     type: "line",
     data: {
@@ -91,13 +97,36 @@ function initCharts() {
         label: "Rendimiento (%)",
         data: [rnd(), rnd(), rnd(), rnd(), rnd(), rnd()],
         borderColor: "#15ff73",
-        backgroundColor: "rgba(21,255,115,.25)",
-        tension: .3,
-        fill: true
+        backgroundColor: gradient,
+        tension: .35,
+        fill: true,
+        pointRadius: 3,
+        pointHoverRadius: 5,
+        pointBackgroundColor: "#15ff73"
       }]
     },
-    options: { plugins: { legend: { display: true } }, scales: { y: { min: 0, max: 100 } } }
+    options: {
+      responsive: true,
+      interaction: { mode: 'nearest', intersect: false },
+      plugins: {
+        legend: { display: true, labels: { color: '#fff' } },
+        tooltip: {
+          enabled: true,
+          backgroundColor: '#111',
+          borderColor: '#15ff73',
+          borderWidth: 1,
+          titleColor: '#15ff73',
+          bodyColor: '#fff',
+          displayColors: false
+        }
+      },
+      scales: {
+        x: { ticks: { color: '#fff' }, grid: { color: '#333' } },
+        y: { min: 0, max: 100, ticks: { color: '#fff' }, grid: { color: '#333' } }
+      }
+    }
   });
+
   new Chart(recEl, {
     type: "bar",
     data: {
@@ -106,10 +135,29 @@ function initCharts() {
         label: "Uso relativo",
         data: [rnd(), rnd(), rnd(), rnd()],
         backgroundColor: ["#a8e5c8", "#7fe9c0", "#4fe6a8", "#15ff73"],
-        borderRadius: 8
+        borderRadius: 12,
+        maxBarThickness: 42
       }]
     },
-    options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 100 } } }
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          enabled: true,
+          backgroundColor: '#111',
+          borderColor: '#15ff73',
+          borderWidth: 1,
+          titleColor: '#15ff73',
+          bodyColor: '#fff',
+          displayColors: false
+        }
+      },
+      scales: {
+        x: { ticks: { color: '#fff' }, grid: { color: '#333' } },
+        y: { beginAtZero: true, max: 100, ticks: { color: '#fff' }, grid: { color: '#333' } }
+      }
+    }
   });
 }
 
