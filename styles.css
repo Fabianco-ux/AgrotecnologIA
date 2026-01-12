@@ -8,7 +8,7 @@ body { margin: 0; font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto
 .nav-link { text-decoration: none; padding: 8px 12px; border-radius: 10px; color: #fff; background: #111; border: 1px solid #15ff73; transition: background .2s ease, transform .1s ease; }
 .nav-link:hover { background: #151515; transform: translateY(-1px); }
 
-.brand-logo { height: 16px; width: auto; margin-right: 6px; vertical-align: middle; object-fit: contain; }
+.brand-logo { height: 32px; width: auto; margin-right: 6px; vertical-align: middle; object-fit: contain; }
 
 .app-footer { text-align: center; padding: 20px; color: #fff; }
 
@@ -62,20 +62,20 @@ button.secondary { background: #0d0d0d; border-color: #15ff73; }
 h1, h2, h3 { color: #15ff73; }
 
 /* Tema claro: restablece colores suaves y texto oscuro */
-[data-theme="light"] body { color: #111; background: #e9f7ef; }
-[data-theme="light"] .app-header { background: #d9f2e4; border-bottom-color: #c8e8d7; }
-[data-theme="light"] .brand { color: #111; }
-[data-theme="light"] .nav-link { color: #111; background: #cfeedd; border-color: #bfe3cd; }
-[data-theme="light"] .nav-link:hover { background: #bfe6d0; }
-[data-theme="light"] .app-footer { color: #333; }
-[data-theme="light"] .card { border-color: #cfeedd; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
-[data-theme="light"] .card-title { color: #111; }
-[data-theme="light"] .panel { border-color: #cfeedd; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
-[data-theme="light"] .form { border-color: #15ff73; }
-[data-theme="light"] input, [data-theme="light"] select, [data-theme="light"] textarea { background: #f8fffb; border-color: #a8e5c8; color: #111; }
-[data-theme="light"] .demo-note { color: #0a7a3d; }
-[data-theme="light"] button { background: #dff6ec; color: #111; border-color: #a8e5c8; }
-[data-theme="light"] button.primary { background: #15ff73; border-color: #15ff73; color: #002b11; }
-[data-theme="light"] button.secondary { background: #eefaf4; border-color: #a8e5c8; }
-[data-theme="light"] .dialog::backdrop { background: rgba(0,0,0,.2); }
-[data-theme="light"] h1, [data-theme="light"] h2, [data-theme="light"] h3 { color: #111; }
+body[data-theme="light"] { color: #111; background: #e9f7ef; }
+body[data-theme="light"] .app-header { background: #d9f2e4; border-bottom-color: #c8e8d7; }
+body[data-theme="light"] .brand { color: #111; }
+body[data-theme="light"] .nav-link { color: #111; background: #cfeedd; border-color: #bfe3cd; }
+body[data-theme="light"] .nav-link:hover { background: #bfe6d0; }
+body[data-theme="light"] .app-footer { color: #333; }
+body[data-theme="light"] .card { border-color: #cfeedd; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
+body[data-theme="light"] .card-title { color: #111; }
+body[data-theme="light"] .panel { border-color: #cfeedd; box-shadow: 0 2px 8px rgba(0,0,0,.05); }
+body[data-theme="light"] .form { border-color: #15ff73; }
+body[data-theme="light"] input, body[data-theme="light"] select, body[data-theme="light"] textarea { background: #f8fffb; border-color: #a8e5c8; color: #111; }
+body[data-theme="light"] .demo-note { color: #0a7a3d; }
+body[data-theme="light"] button { background: #dff6ec; color: #111; border-color: #a8e5c8; }
+body[data-theme="light"] button.primary { background: #15ff73; border-color: #15ff73; color: #002b11; }
+body[data-theme="light"] button.secondary { background: #eefaf4; border-color: #a8e5c8; }
+body[data-theme="light"] .dialog::backdrop { background: rgba(0,0,0,.2); }
+body[data-theme="light"] h1, body[data-theme="light"] h2, body[data-theme="light"] h3 { color: #111; }

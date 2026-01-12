@@ -203,7 +203,7 @@ function initThemeToggle() {
   updateLabel(saved);
   if (btn) {
     btn.addEventListener('click', () => {
-      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const current = document.body.getAttribute('data-theme') || 'dark';
       const next = current === 'dark' ? 'light' : 'dark';
       applyTheme(next);
       localStorage.setItem(KEY, next);
@@ -212,7 +212,7 @@ function initThemeToggle() {
   }
 
   function applyTheme(theme) {
-    document.documentElement.setAttribute('data-theme', theme);
+    document.body.setAttribute('data-theme', theme);
   }
   function updateLabel(theme) {
     if (!btn) return;
