@@ -60,6 +60,18 @@ Importante:
 - El backend Node no corre en GitHub Pages. La sección de IA se mantiene en modo simulado si no hay backend.
 - Los secretos (`.env`) están excluidos por `.gitignore`.
 
+## Logo y recursos estáticos
+
+Coloca tu logo en `assets/` (por ejemplo `assets/logo.png`). El workflow publica esta carpeta como `/assets`.
+
+Para mostrar el logo en el header, agrega en `index.html` dentro del `.app-header`:
+
+```html
+<img class="brand-logo" src="assets/logo.png" alt="AgrotecnologIA" />
+```
+
+La clase `.brand-logo` ya está definida en `styles.css`.
+
 ## Embed para Google Sites
 
 Una vez publicado en GitHub Pages, puedes embeber el sitio en Google Sites usando un iframe.
