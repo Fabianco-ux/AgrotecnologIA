@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
   initForm();
   initCharts();
   initIA();
+  initThemeToggle();
 });
 
 function initDashboard() {
@@ -191,4 +192,30 @@ function initIA() {
       out.innerHTML = simulated.map(i => `<div class=\"ia-card\">${i}</div>`).join("");
     }
   });
+}
+
+// Toggle de tema: oscuro <-> claro
+function initThemeToggle() {
+  const KEY = 'agro_theme';
+  const btn = document.getElementById('theme-toggle');
+  const saved = localStorage.getItem(KEY) || 'dark';
+  applyTheme(saved);
+  updateLabel(saved);
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      const next = current === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      localStorage.setItem(KEY, next);
+      updateLabel(next);
+    });
+  }
+
+  function applyTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+  }
+  function updateLabel(theme) {
+    if (!btn) return;
+    btn.textContent = theme === 'dark' ? '🌙 Oscuro' : '☀️ Claro';
+  }
 }
