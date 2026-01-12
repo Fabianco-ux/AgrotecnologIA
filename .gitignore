@@ -1,0 +1,17 @@
+# Node y entorno
+node_modules/
+.env
+.env.*
+npm-debug.log*
+
+# Sistema y editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Build/artefactos locales
+dist/
+site/
+
+# Evitar publicar llaves o secretos
+server/.env
